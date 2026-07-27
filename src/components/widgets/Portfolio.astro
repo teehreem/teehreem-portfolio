@@ -1,0 +1,97 @@
+
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+const {
+  id,
+  title,
+  subtitle,
+  tagline,
+} = Astro.props;
+---
+
+
+<WidgetWrapper id={id} containerClass="max-w-6xl">
+
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+  />
+
+  <div class="space-y-20 mt-16">
+
+    <!-- Chaaye Khana -->
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-3xl font-bold">Chaaye Khana</h2>
+
+        <a
+          href="/portfolio"
+          class="text-primary font-semibold hover:underline"
+        >
+          View Full Portfolio →
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <img
+          src="/images/chaaye-khana/1.jpg"
+          alt="Chaaye Khana Post"
+          class="rounded-3xl shadow-lg hover:scale-[1.02] transition duration-300"
+        />
+
+        <img
+          src="/images/chaaye-khana/2.jpg"
+          alt="Chaaye Khana Reel"
+class="rounded-3xl shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+        />
+
+      </div>
+    </section>
+
+    <!-- Leafy Brew -->
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-3xl font-bold">Leafy Brew</h2>
+
+        <a
+          href="/portfolio"
+          class="text-primary font-semibold hover:underline"
+        >
+          View Full Portfolio →
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <img
+          src="/images/leafy-brew/1.jpg"
+          alt="Leafy Brew"
+          class="rounded-3xl shadow-lg hover:scale-[1.02] transition duration-300"
+        />
+
+        <img
+          src="/images/leafy-brew/2.jpg"
+          alt="Leafy Brew"
+          class="rounded-3xl shadow-lg hover:scale-[1.02] transition duration-300"
+        />
+
+      </div>
+    </section>
+
+    <div class="text-center">
+      <a
+        href="/portfolio"
+        class="inline-flex items-center rounded-full bg-primary px-8 py-4 text-white font-semibold hover:bg-secondary transition"
+      >
+        View Complete Portfolio →
+      </a>
+    </div>
+
+  </div>
+
+</WidgetWrapper>
+

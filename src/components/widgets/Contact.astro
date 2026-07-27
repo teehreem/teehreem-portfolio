@@ -1,40 +1,87 @@
 ---
-import FormContainer from '~/components/ui/Form.astro';
-import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import type { Contact as Props } from '~/types';
+import Headline from '~/components/ui/Headline.astro';
 
-const {
-  title = await Astro.slots.render('title'),
-  subtitle = await Astro.slots.render('subtitle'),
-  tagline = await Astro.slots.render('tagline'),
-  inputs,
-  textarea,
-  disclaimer,
-  button,
-  description,
-
-  id,
-  isDark = false,
-  classes = {},
-  bg = await Astro.slots.render('bg'),
-} = Astro.props;
+const { id } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+<WidgetWrapper id={id} containerClass="max-w-6xl">
 
-  {
-    inputs && (
-      <div class="flex flex-col max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
-        <FormContainer
-          inputs={inputs}
-          textarea={textarea}
-          disclaimer={disclaimer}
-          button={button}
-          description={description}
-        />
+  <Headline
+    tagline="LET'S TALK"
+    title="Let's create something memorable."
+    subtitle="Whether you're looking for social media management, content creation, branding or a new website, I'd love to hear about your project."
+  />
+
+  <div class="mt-16 grid md:grid-cols-2 gap-10">
+
+    <div class="rounded-3xl border border-slate-200 p-8 shadow-sm">
+
+      <div class="space-y-8">
+
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-primary font-semibold">
+            Email
+          </p>
+
+          <a
+            href="mailto:hello@teehreem.com"
+            class="mt-2 block text-xl font-semibold hover:text-primary transition"
+          >
+            hello@teehreem.com
+          </a>
+        </div>
+
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-primary font-semibold">
+            Location
+          </p>
+
+          <p class="mt-2 text-xl">
+            Islamabad, Pakistan
+          </p>
+        </div>
+
       </div>
-    )
-  }
+
+    </div>
+
+    <div class="rounded-3xl border border-slate-200 p-8 shadow-sm">
+
+      <div class="space-y-8">
+
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-primary font-semibold">
+            Instagram
+          </p>
+
+          <a
+            href="https://www.instagram.com/teehreeem"
+            target="_blank"
+            class="mt-2 block text-xl font-semibold hover:text-primary transition"
+          >
+            @teehreeem
+          </a>
+        </div>
+
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-primary font-semibold">
+            LinkedIn
+          </p>
+
+          <a
+            href="https://www.linkedin.com/in/teehreeem"
+            target="_blank"
+            class="mt-2 block text-xl font-semibold hover:text-primary transition"
+          >
+            linkedin.com/in/teehreeem
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </WidgetWrapper>
