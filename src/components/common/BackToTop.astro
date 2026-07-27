@@ -1,0 +1,53 @@
+<button
+  id="back-to-top"
+  type="button"
+  aria-label="Back to top"
+  class="
+    fixed bottom-6 right-6 z-50
+    hidden
+    h-12 w-12
+    items-center justify-center
+    rounded-full
+    border border-gray-200/70
+    bg-white/90
+    text-xl text-gray-700
+    shadow-lg
+    backdrop-blur-md
+    transition-all duration-300
+    hover:-translate-y-1
+    hover:shadow-xl
+    dark:border-gray-700
+    dark:bg-slate-900/90
+    dark:text-white
+  "
+>
+  ↑
+</button>
+
+<script>
+  const setupBackToTop = () => {
+    const button = document.getElementById('back-to-top');
+
+    if (!(button instanceof HTMLButtonElement)) return;
+
+    const updateButton = () => {
+      const shouldShow = window.scrollY > 600;
+
+      button.classList.toggle('hidden', !shouldShow);
+      button.classList.toggle('flex', shouldShow);
+    };
+
+    button.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+
+    updateButton();
+    window.addEventListener('scroll', updateButton, { passive: true });
+  };
+
+  setupBackToTop();
+  document.addEventListener('astro:page-load', setupBackToTop);
+</script>
