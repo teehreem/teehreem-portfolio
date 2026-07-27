@@ -154,8 +154,13 @@ import { UI } from 'astrowind:config';
     document.querySelector('#header nav')?.classList.add('hidden');
   };
 
-  window.onload = onLoad;
-  window.onpageshow = onPageShow;
+  if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', onLoad, { once: true });
+} else {
+  onLoad();
+}
+
+window.addEventListener('pageshow', onPageShow);
 
   document.addEventListener('astro:after-swap', () => {
     initTheme();
