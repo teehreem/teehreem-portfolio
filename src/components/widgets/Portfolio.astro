@@ -3,29 +3,24 @@
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 
-const {
-  id,
-  title,
-  subtitle,
-  tagline,
-} = Astro.props;
+const { id, title, subtitle, tagline } = Astro.props;
 ---
 
-
 <WidgetWrapper id={id} containerClass="max-w-6xl">
-
   <Headline
     title={title}
     subtitle={subtitle}
     tagline={tagline}
   />
 
-  <div class="space-y-20 mt-16">
+  <div class="space-y-16 md:space-y-20 mt-12 md:mt-16">
 
     <!-- Chaaye Khana -->
     <section>
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-3xl font-bold">Chaaye Khana</h2>
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold">
+          Chaaye Khana
+        </h2>
 
         <a
           href="/portfolio"
@@ -35,18 +30,22 @@ const {
         </a>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
 
         <img
           src="/images/chaaye-khana/1.jpg"
-          alt="Chaaye Khana Post"
-          class="rounded-3xl shadow-lg hover:scale-[1.02] transition duration-300"
+          alt="Chaaye Khana social media work"
+          class="w-full h-auto rounded-3xl shadow-lg transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-2xl"
+          loading="lazy"
+          decoding="async"
         />
 
         <img
           src="/images/chaaye-khana/2.jpg"
-          alt="Chaaye Khana Reel"
-class="rounded-3xl shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+          alt="Chaaye Khana content campaign"
+          class="w-full h-auto rounded-3xl shadow-lg transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-2xl"
+          loading="lazy"
+          decoding="async"
         />
 
       </div>
@@ -54,8 +53,10 @@ class="rounded-3xl shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-al
 
     <!-- Leafy Brew -->
     <section>
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-3xl font-bold">Leafy Brew</h2>
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold">
+          Leafy Brew
+        </h2>
 
         <a
           href="/portfolio"
@@ -65,18 +66,22 @@ class="rounded-3xl shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-al
         </a>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 
         <img
           src="/images/leafy-brew/1.jpg"
-          alt="Leafy Brew"
-          class="rounded-3xl shadow-lg hover:scale-[1.02] transition duration-300"
+          alt="Leafy Brew branding work"
+          class="w-full h-auto rounded-3xl shadow-lg transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-2xl"
+          loading="lazy"
+          decoding="async"
         />
 
         <img
           src="/images/leafy-brew/2.jpg"
-          alt="Leafy Brew"
-          class="rounded-3xl shadow-lg hover:scale-[1.02] transition duration-300"
+          alt="Leafy Brew social media content"
+          class="w-full h-auto rounded-3xl shadow-lg transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-2xl"
+          loading="lazy"
+          decoding="async"
         />
 
       </div>
@@ -85,13 +90,11 @@ class="rounded-3xl shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-al
     <div class="text-center">
       <a
         href="/portfolio"
-        class="inline-flex items-center rounded-full bg-primary px-8 py-4 text-white font-semibold hover:bg-secondary transition"
+        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 md:px-8 md:py-4 text-white font-semibold hover:bg-secondary transition"
       >
         View Complete Portfolio →
       </a>
     </div>
 
   </div>
-
 </WidgetWrapper>
-
